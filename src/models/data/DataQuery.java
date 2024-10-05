@@ -2,6 +2,8 @@ package models.data;
 
 import java.util.List;
 
+import models.database.TAPServices;
+
 public class DataQuery {
 
     private DataStorage dataStorage;

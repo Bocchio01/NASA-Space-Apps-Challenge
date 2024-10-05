@@ -9,7 +9,7 @@ import GUI.layouts.TwoRows;
 import models.MainModel;
 import utils.Interfaces;
 
-public class ExamplePanel extends TwoRows implements Interfaces.UIPanel {
+public class templatePanel extends TwoRows implements Interfaces.UIPanel {
 
     public static String ID = "ExamplePanel";
     private GUI gui;

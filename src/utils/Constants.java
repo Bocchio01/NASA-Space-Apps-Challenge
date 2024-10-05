@@ -5,9 +5,16 @@ import java.awt.Dimension;
 public class Constants {
 
     public static final String SEPARATOR = ";";
-    public static final String APP_TITLE = "Template App";
+    public static final String APP_TITLE = "Exosky!";
 
     private Constants() {
+    }
+
+    public static final class TAP {
+        public static final String URL = "https://exoplanetarchive.ipac.caltech.edu/TAP";
+
+        private TAP() {
+        }
     }
 
     public static final class Path {
@@ -15,7 +22,7 @@ public class Constants {
         public static final String SEPARATOR = "/";
 
         public static final class Assets {
-            public static final String LOGO = getPath("logo.jpg");
+            public static final String LOGO = getPath("logo.png");
 
             private Assets() {
             }

@@ -3,6 +3,8 @@
         ".",
         "src"
     ],
-    "java.project.referencedLibraries": [],
+    "java.project.referencedLibraries": [
+        "lib/adql1.5.jar"
+    ],
     "java.configuration.updateBuildConfiguration": "interactive"
 }

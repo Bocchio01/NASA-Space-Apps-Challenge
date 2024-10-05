@@ -2,7 +2,7 @@ package models.record;
 
 import utils.Constants;
 
-public record ExampleRecord(
+public record PlanetRecord(
         Integer ID) {
 
     @Override

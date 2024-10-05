@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import GUI.mainElements.MainFrame;
 import GUI.mainElements.MainWindows;
 import GUI.mainElements.MenuBar;
-import GUI.panels.ExamplePanel;
+import GUI.panels.HomePanel;
 import models.MainModel;
 import utils.Interfaces;
 
@@ -32,7 +32,7 @@ public class GUI {
     private Map<String, Interfaces.UIPanel> Panels = new HashMap<>();
     private String currentID;
 
-    private ExamplePanel examplePanel;
+    private HomePanel homePanel;
 
     /**
      * Constructs a GUI instance for managing the application's user interface.
@@ -47,7 +47,7 @@ public class GUI {
         mainWindowsArea.getMainPanel().revalidate();
         mainWindowsArea.getMainPanel().repaint();
 
-        examplePanel = new ExamplePanel(mainModel);
+        homePanel = new HomePanel(mainModel);
 
     }
 
@@ -55,7 +55,7 @@ public class GUI {
      * Adds the panels to the user interface.
      */
     public void addPanels() {
-        addPanel(examplePanel.createPanel(this));
+        addPanel(homePanel.createPanel(this));
     }
 
     /**
