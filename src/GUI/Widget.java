@@ -1,12 +1,16 @@
 package GUI;
 
+import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Image;
 import java.awt.Insets;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -164,6 +168,63 @@ public class Widget {
         @Override
         public String toString() {
             return label;
+        }
+    }
+
+    public static class StarField extends JPanel {
+
+        private List<Star> stars;
+
+        public StarField(List<Star> stars) {
+            this.stars =  List.of(
+                new Star(100, 150, 1, 3),
+                new Star(200, 100, 5, 2),
+                new Star(300, 200, 10, 5)
+            );
+            setLayout(new GridBagLayout());
+            setBackground(Color.BLACK); // Imposta lo sfondo nero
+        }
+
+        @Override
+        protected void paintComponent(Graphics g) {
+            super.paintComponent(g);
+            Graphics2D g2d = (Graphics2D) g;
+
+            // Disegna ogni stella nell'array
+            for (Star star : stars) {
+                // Calcola la dimensione della stella in base alla distanza
+                int size = getSizeBasedOnDistance(star.getDistanceFromPlanet());
+
+                // Imposta il colore della stella in base alla luminosità
+                g2d.setColor(getColorBasedOnBrightness(star.getBrightness()));
+
+                // Disegna la stella come un piccolo cerchio
+                g2d.fillOval(star.getX(), star.getY(), size, size);
+            }
+        }
+
+        // Metodo per determinare la dimensione in base alla distanza
+        private int getSizeBasedOnDistance(double distance) {
+            // Maggiore è la distanza, più piccola appare la stella (esempio base)
+            return (int) Math.max(1, 10 - distance * 0.1);
+        }
+
+        // Metodo per determinare il colore basato sulla luminosità
+        private Color getColorBasedOnBrightness(int brightness) {
+            switch (brightness) {
+                case 1:
+                    return new Color(200, 200, 255); // Colore tenue
+                case 2:
+                    return new Color(150, 150, 255);
+                case 3:
+                    return new Color(100, 100, 255);
+                case 4:
+                    return new Color(50, 50, 255);
+                case 5:
+                    return new Color(0, 0, 255); // Colore più luminoso
+                default:
+                    return Color.WHITE; // Default
+            }
         }
     }
 }

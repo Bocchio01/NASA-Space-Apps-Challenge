@@ -1,37 +1,43 @@
 package GUI.panels;
 
+import java.awt.BorderLayout;
+import java.util.List;
+
 import javax.swing.*;
 
 import GUI.GUI;
+import GUI.Star;
 import GUI.Widget;
-import GUI.layouts.TwoRows;
 import models.MainModel;
 import utils.Interfaces;
 
-public class VisualizerPanel extends TwoRows implements Interfaces.UIPanel {
+public class Visual extends JPanel implements Interfaces.UIPanel {
 
-    public static String ID = "Visualizer";
+    public static String ID = "VisualPanel";
     private GUI gui;
     private MainModel mainModel;
 
-    private JLabel labelWelcome = new JLabel("Benvenuto!");
+    private Widget.StarField starField;
 
-    public VisualizerPanel(MainModel mainModel) {
+    public Visual(MainModel mainModel) {
         this.mainModel = mainModel;
+         this.starField = new Widget.StarField(List.of(
+            new Star(100, 150, 1, 3),
+            new Star(200, 100, 5, 2),
+            new Star(300, 200, 10, 5)
+        ));
     }
 
     private void addActionEvent() {
     }
 
     @Override
-    public VisualizerPanel createPanel(GUI gui) {
+    public Visual createPanel(GUI gui) {
         this.gui = gui;
 
-        addTop(new Widget.LogoLabel());
-        addBottom(new Widget.StarField(null));
-
-        gui.appTheme.registerPanel(topPanel);
-        gui.appTheme.registerPanel(bottomPanel);        
+        this.setLayout(new BorderLayout());
+        this.add(starField, BorderLayout.CENTER); 
+        gui.appTheme.registerPanel(this);        
 
         addActionEvent();
 
@@ -51,7 +57,7 @@ public class VisualizerPanel extends TwoRows implements Interfaces.UIPanel {
         SwingUtilities.invokeLater(() -> {
             MainModel mainModel = new MainModel();
             GUI gui = new GUI(mainModel);
-            VisualizerPanel home = new VisualizerPanel(mainModel);
+            Visual home = new Visual (mainModel);
 
             gui.addPanel(home.createPanel(gui));
             home.onOpen(args);

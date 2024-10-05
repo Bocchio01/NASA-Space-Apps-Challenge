@@ -13,6 +13,7 @@ import GUI.mainElements.MainFrame;
 import GUI.mainElements.MainWindows;
 import GUI.mainElements.MenuBar;
 import GUI.panels.HomePanel;
+import GUI.panels.Visual;
 import models.MainModel;
 import utils.Interfaces;
 
@@ -33,6 +34,7 @@ public class GUI {
     private String currentID;
 
     private HomePanel homePanel;
+    private Visual visualPanel;
 
     /**
      * Constructs a GUI instance for managing the application's user interface.
@@ -48,6 +50,8 @@ public class GUI {
         mainWindowsArea.getMainPanel().repaint();
 
         homePanel = new HomePanel(mainModel);
+        visualPanel = new Visual(mainModel);
+
 
     }
 
@@ -56,6 +60,7 @@ public class GUI {
      */
     public void addPanels() {
         addPanel(homePanel.createPanel(this));
+        addPanel(visualPanel.createPanel(this));
     }
 
     /**

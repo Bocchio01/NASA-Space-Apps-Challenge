@@ -3,13 +3,12 @@ package GUI.mainElements;
 import java.awt.Cursor;
 import java.awt.FlowLayout;
 
-import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import GUI.GUI;
 import GUI.panels.HomePanel;
-import GUI.panels.VisualizerPanel;
+import GUI.panels.Visual;
 
 /**
  * The MenuBar class represents a custom menu bar for the graphical user
@@ -31,7 +30,7 @@ public class MenuBar extends JMenuBar {
 
         itemHomePanel.addActionListener(e -> {
             gui.goToPanel(HomePanel.ID, null);
-            gui.goToPanel(VisualizerPanel.ID, null);
+            gui.goToPanel(Visual.ID, null);
         });
 
         add(itemHomePanel);
