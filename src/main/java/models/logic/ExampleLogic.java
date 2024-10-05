@@ -1,6 +1,6 @@
-package models.logic;
+package main.java.models.logic;
 
-import models.data.DataHandler;
+import main.java.models.data.DataHandler;
 
 public class ExampleLogic {
 

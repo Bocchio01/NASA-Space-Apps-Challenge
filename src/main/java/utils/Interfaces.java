@@ -1,9 +1,9 @@
-package utils;
+package main.java.utils;
 
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import GUI.GUI;
+import main.java.GUI.GUI;
 
 public class Interfaces {
 

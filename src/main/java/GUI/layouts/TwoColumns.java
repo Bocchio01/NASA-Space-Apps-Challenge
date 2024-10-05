@@ -1,4 +1,4 @@
-package GUI.layouts;
+package main.java.GUI.layouts;
 
 import javax.swing.*;
 

@@ -1,4 +1,4 @@
-package GUI;
+package main.java.GUI;
 
 import java.awt.Cursor;
 import java.awt.GridBagConstraints;
@@ -15,7 +15,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import utils.Constants;
+import main.java.utils.Constants;
 
 /**
  * The Widget class provides a collection of reusable GUI components and panels

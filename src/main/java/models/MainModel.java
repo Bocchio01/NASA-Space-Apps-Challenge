@@ -1,8 +1,8 @@
-package models;
+package main.java.models;
 
-import models.data.DataHandler;
-import models.data.DataStorage;
-import models.logic.ExampleLogic;
+import main.java.models.data.DataHandler;
+import main.java.models.data.DataStorage;
+import main.java.models.logic.ExampleLogic;
 
 /**
  * The MainModel class represents the core model of the application.

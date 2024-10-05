@@ -1,4 +1,4 @@
-package GUI.mainElements;
+package main.java.GUI.mainElements;
 
 import java.awt.Cursor;
 import java.awt.FlowLayout;
@@ -6,8 +6,9 @@ import java.awt.FlowLayout;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import GUI.GUI;
-import GUI.panels.ExamplePanel;
+
+import main.java.GUI.GUI;
+import main.java.GUI.panels.ExamplePanel;
 
 /**
  * The MenuBar class represents a custom menu bar for the graphical user interface.

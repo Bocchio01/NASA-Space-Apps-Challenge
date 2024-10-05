@@ -1,4 +1,4 @@
-package models.data;
+package main.java.models.data;
 
 public class DataHandler extends DataQuery {
 

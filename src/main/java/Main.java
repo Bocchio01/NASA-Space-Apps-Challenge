@@ -1,6 +1,7 @@
-import GUI.GUI;
-import GUI.panels.ExamplePanel;
-import models.MainModel;
+package main.java;
+import main.java.GUI.GUI;
+import main.java.GUI.panels.ExamplePanel;
+import main.java.models.MainModel;
 
 class Main {
 

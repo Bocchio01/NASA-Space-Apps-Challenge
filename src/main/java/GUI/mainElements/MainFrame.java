@@ -1,4 +1,4 @@
-package GUI.mainElements;
+package main.java.GUI.mainElements;
 
 import java.awt.BorderLayout;
 import java.awt.Image;
@@ -8,8 +8,8 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
-import GUI.Widget;
-import utils.Constants;
+import main.java.GUI.Widget;
+import main.java.utils.Constants;
 
 /**
  * The MainFrame class represents the main window of the application.

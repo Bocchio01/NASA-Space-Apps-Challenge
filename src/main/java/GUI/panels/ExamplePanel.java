@@ -1,13 +1,13 @@
-package GUI.panels;
+package main.java.GUI.panels;
 
 import javax.swing.*;
 
-import GUI.GUI;
-import GUI.Widget;
-import GUI.Widget.Button;
-import GUI.layouts.TwoRows;
-import models.MainModel;
-import utils.Interfaces;
+import main.java.GUI.GUI;
+import main.java.GUI.Widget;
+import main.java.GUI.Widget.Button;
+import main.java.GUI.layouts.TwoRows;
+import main.java.models.MainModel;
+import main.java.utils.Interfaces;
 
 public class ExamplePanel extends TwoRows implements Interfaces.UIPanel {
 

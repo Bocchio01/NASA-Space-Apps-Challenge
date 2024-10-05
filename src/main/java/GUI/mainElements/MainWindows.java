@@ -1,4 +1,4 @@
-package GUI.mainElements;
+package main.java.GUI.mainElements;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -9,8 +9,8 @@ import javax.swing.JScrollPane;
 import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 
-import utils.Functions;
-import utils.Interfaces;
+import main.java.utils.Functions;
+import main.java.utils.Interfaces;
 
 /**
  * The MainWindows class represents the main user interface panel for the application.

@@ -1,4 +1,4 @@
-package GUI;
+package main.java.GUI;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
@@ -9,12 +9,12 @@ import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import GUI.mainElements.MainFrame;
-import GUI.mainElements.MainWindows;
-import GUI.mainElements.MenuBar;
-import GUI.panels.ExamplePanel;
-import models.MainModel;
-import utils.Interfaces;
+import main.java.GUI.mainElements.MainFrame;
+import main.java.GUI.mainElements.MainWindows;
+import main.java.GUI.mainElements.MenuBar;
+import main.java.GUI.panels.ExamplePanel;
+import main.java.models.MainModel;
+import main.java.utils.Interfaces;
 
 /**
  * The GUI class manages the graphical user interface of the application.
