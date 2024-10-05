@@ -37,8 +37,8 @@ public class Constants {
     }
 
     public static final class GUI {
-        public static final Integer FRAME_WIDTH = 1400;
-        public static final Integer FRAME_HEIGHT = 900;
+        public static final Integer FRAME_WIDTH = 1000;
+        public static final Integer FRAME_HEIGHT = 600;
         public static final Dimension WIDGET_DIMENSION = new Dimension(300, 40);
 
         private GUI() {

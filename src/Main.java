@@ -1,5 +1,5 @@
 import GUI.GUI;
-import GUI.panels.HomePanel;
+import GUI.menus.HomeMenu;
 import models.MainModel;
 
 class Main {
@@ -14,7 +14,7 @@ class Main {
     public void lauchGUI() {
         gui = new GUI(mainModel);
         gui.addPanels();
-        gui.goToPanel(HomePanel.ID, null);
+        gui.goToPanel(HomeMenu.ID, null);
     }
 
     public static void main(String[] args) {

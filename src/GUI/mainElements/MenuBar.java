@@ -7,37 +7,36 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import GUI.GUI;
-import GUI.panels.HomePanel;
-import GUI.panels.Visual;
+import GUI.menus.ExplorerMenu;
+import GUI.menus.HomeMenu;
 
-/**
- * The MenuBar class represents a custom menu bar for the graphical user
- * interface.
- * It includes menu items for navigating across the application.
- */
 public class MenuBar extends JMenuBar {
 
+    private GUI gui;
+
     public MenuBar(GUI gui) {
+        this.gui = gui;
+
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
-        JMenuItem itemHomePanel = new JMenuItem("Home");
-        JMenuItem itemViualizerPanel = new JMenuItem("Visualizer");
-
-        JMenuItem[] jMenuItems = new JMenuItem[] {
-                itemHomePanel,
-                itemViualizerPanel
-        };
-
-        itemHomePanel.addActionListener(e -> {
-            gui.goToPanel(HomePanel.ID, null);
-            gui.goToPanel(Visual.ID, null);
-        });
+        JMenuItem itemHomePanel = createMenuItem("Home", HomeMenu.ID);
+        JMenuItem itemViualizerPanel = createMenuItem("Visualizer", ExplorerMenu.ID);
 
         add(itemHomePanel);
         add(itemViualizerPanel);
+    }
 
-        for (JMenuItem jMenuItem : jMenuItems) {
-            jMenuItem.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    public JMenuItem createMenuItem(String text, String ID) {
+        JMenuItem item = new JMenuItem(text);
+        
+        item.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+        if (ID != null) {
+            item.addActionListener(e -> {
+                gui.goToPanel(ID, null);
+            });
         }
+
+        return item;
     }
 }

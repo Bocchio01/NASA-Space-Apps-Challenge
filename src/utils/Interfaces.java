@@ -1,7 +1,9 @@
 package utils;
 
+import java.awt.CardLayout;
+
+import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 
 import GUI.GUI;
 
@@ -12,13 +14,13 @@ public class Interfaces {
     }
 
     public interface UIWindows {
-        JPanel getMainPanel();
-    
-        JScrollPane getScrollPane();
-    
-        JPanel getContentPanel();
-    
-        void setAppInfo(String text);
+        JFrame getMainFrame();
+   
+        JPanel getMenuPanel();
+        
+        JPanel getExplorerPanel();
+
+        CardLayout getMenuCardLayout();
     }
 
     public interface UIPanel {
