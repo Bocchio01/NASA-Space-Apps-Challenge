@@ -1,0 +1,74 @@
+/* ---- sort table ---- */
+table.sort {
+border:0;
+padding:0;margin:0;
+border-top:1px solid #9c9bd5;
+border-left:1px solid #9c9bd5;
+}
+table.sort td{
+vertical-align:top;
+border:0;
+padding:0;
+margin:0;
+padding-left:0.1em; padding-right:0.1em;
+border-bottom:1px solid #9c9bd5;
+border-right:1px solid #9c9bd5;
+}
+table.sort th{
+vertical-align:top;
+border:0;
+padding:0;margin:0;
+padding-left:0.1em; padding-right:0.1em;
+border-bottom:1px solid #9c9bd5;
+border-right:1px solid #9c9bd5;
+}
+
+.sort-colheader {
+text-align:center;
+background-color: #DEDEFF ;
+color: black; 
+}
+.sort-col-on {
+background-color: #F2EFFB ;
+border-top:1px dotted #DBDBDB;
+}
+
+.sort div.sort-down {
+padding-top:8px;
+background-image:url(/vizier/lib/sortable/sort_down.png);
+background-repeat: no-repeat;
+background-position: center ;
+border-top:1px dotted #F2EFFB;
+cursor: pointer;
+}
+.sort div.sort-up {
+padding-top:8px;
+background-image:url(/vizier/lib/sortable/sort_up.png);
+background-repeat: no-repeat;
+background-position: center ;
+border-top:1px dotted #F2EFFB;
+cursor: pointer;
+}
+
+html > body div.sort-down {
+margin-top:2px;
+}
+html > body div.sort-up {
+margin-top:2px;
+}
+
+
+tr.tuple-1{
+background-color: #F2EFFB; 
+}
+
+div.time-wait{
+position: absolute;
+background-color: white;
+border:1px solid black;
+display: block;
+padding: 20px;
+}
+div.no-wait{
+display: none;
+}
