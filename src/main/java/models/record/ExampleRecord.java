@@ -1,6 +1,6 @@
 package main.java.models.record;
 
-import utils.Constants;
+import main.java.utils.Constants;
 
 public record ExampleRecord(
         Integer ID) {
@@ -11,8 +11,7 @@ public record ExampleRecord(
                 ID.toString()                
         };
 
-        return String.join(Constants.SEPARATOR
-         dataStrings);
+        return String.join(Constants.SEPARATOR, dataStrings);
     }
 }
 
