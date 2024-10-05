@@ -15,7 +15,7 @@ import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import utils.ENV;
+import utils.Constants;
 
 /**
  * The Widget class provides a collection of reusable GUI components and panels
@@ -43,7 +43,7 @@ public class Widget {
 
             // Create and configure the label
             JLabel label = new JLabel(labelText);
-            activeArea.setPreferredSize(ENV.GUI.WIDGET_DIMENSION);
+            activeArea.setPreferredSize(Constants.GUI.WIDGET_DIMENSION);
 
             // Configure GridBagConstraints for layout
             GridBagConstraints gbc = new GridBagConstraints();
@@ -77,7 +77,7 @@ public class Widget {
         public Button(String text) {
             setText(text);
             setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-            setPreferredSize(ENV.GUI.WIDGET_DIMENSION);
+            setPreferredSize(Constants.GUI.WIDGET_DIMENSION);
         }
     }
 
@@ -115,7 +115,7 @@ public class Widget {
 
             try {
                 // Load and scale the application logo
-                BufferedImage originalImage = ImageIO.read(getClass().getResource(ENV.Path.Assets.LOGO));
+                BufferedImage originalImage = ImageIO.read(getClass().getResource(Constants.Path.Assets.LOGO));
                 Image scaledImage = originalImage.getScaledInstance(width, height, Image.SCALE_SMOOTH);
 
                 // Set the scaled logo as the label's icon
