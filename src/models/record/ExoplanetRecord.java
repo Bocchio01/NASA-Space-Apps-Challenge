@@ -110,21 +110,21 @@ public record ExoplanetRecord(
     public String toString() {
         String[] dataStrings = new String[] {
                 ID.toString(),
-                name,
-                planet_status,
-                mass.toString(),
-                radius.toString(),
-                orbital_period.toString(),
-                semi_major_axis.toString(),
-                eccentricity.toString(),
-                inclination.toString(),
-                angular_distance.toString(),
-                discovered.toString(),
-                updated,
-                omega.toString(),
-                k.toString(),
-                temp_calculated.toString(),
-                temp_measured.toString(),
+                name != null ? name : "Unknown",
+                planet_status != null ? planet_status : "Unknown",
+                mass != null ? mass.toString() : "Unknown",
+                radius != null ? radius.toString() : "Unknown",
+                orbital_period != null ? orbital_period.toString() : "Unknown",
+                semi_major_axis != null ? semi_major_axis.toString() : "Unknown",
+                eccentricity != null ? eccentricity.toString() : "Unknown",
+                inclination != null ? inclination.toString() : "Unknown",
+                angular_distance != null ? angular_distance.toString() : "Unknown",
+                discovered != null ? discovered.toString() : "Unknown",
+                updated != null ? updated : "Unknown",
+                omega != null ? omega.toString() : "Unknown",
+                k != null ? k.toString() : "Unknown",
+                temp_calculated != null ? temp_calculated.toString() : "Unknown",
+                temp_measured != null ? temp_measured.toString() : "Unknow"
         };
 
         return String.join(Constants.SEPARATOR, dataStrings);

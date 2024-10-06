@@ -2,6 +2,8 @@ package GUI.explorer;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.*;
@@ -17,10 +19,7 @@ public class ExplorerDisplay extends JPanel implements Interfaces.UIPanel {
 
     public static String ID = "ExplorerDisplay";
 
-    @SuppressWarnings("unused")
     private GUI gui;
-    
-    @SuppressWarnings("unused")
     private MainModel mainModel;
 
     private Widget.StarField starField;
@@ -28,16 +27,27 @@ public class ExplorerDisplay extends JPanel implements Interfaces.UIPanel {
     public ExplorerDisplay(MainModel mainModel) {
         this.mainModel = mainModel;
 
-        ExoplanetRecord exoplanet = mainModel.data.getExoplanetBy(2);
-        System.out.println("Esopianeta: " + exoplanet);
+        setBackground(Color.BLACK);
+        setPreferredSize(new Dimension(800, 600));
 
-        this.setBackground(Color.BLACK);
+        List<ExoplanetRecord> exoplanets = new ArrayList<>();
+        for (int i = 1; i < 500; i++) {
+            exoplanets.add(mainModel.data.getExoplanetBy(i));
+        }
 
+        Dimension dim = getSize();
 
-        this.starField = new Widget.StarField(List.of(
-                new StarRecord(100, 150, 1, 3),
-                new StarRecord(200, 100, 5, 2),
-                new StarRecord(300, 200, 10, 5)));
+        List<StarRecord> stars = new ArrayList<>();
+        for (ExoplanetRecord exoplanet : exoplanets) {
+            stars.add(new StarRecord(
+               (int) (exoplanet.ra() / 360 * 600),
+               (int) (exoplanet.dec() / 90 * 500 / 2 + 500 / 2),
+                10,
+                5));
+            
+        }
+
+        this.starField = new Widget.StarField(stars);
     }
 
     private void addActionEvent() {

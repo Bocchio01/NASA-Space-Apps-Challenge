@@ -109,10 +109,8 @@ public class Widget {
         private List<StarRecord> stars;
 
         public StarField(List<StarRecord> stars) {
-            this.stars = List.of(
-                    new StarRecord(100, 150, 1, 3),
-                    new StarRecord(200, 100, 5, 2),
-                    new StarRecord(300, 200, 10, 5));
+            this.stars = stars;
+            
             setLayout(new GridBagLayout());
             setBackground(Color.BLACK);
         }
