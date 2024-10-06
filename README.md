@@ -1,47 +1,23 @@
-# NASA-Space-Apps-Challenge
+# Exosky! Hunting new horizons
 
 "NASA Space Apps Challenge" 2024, submitted by the "Giovio Team"
 
-## Criteria
+![Team logo](src/assets/logo.png)
 
-- Impact
-- Creativity
-- Validity
-- Relevance
-- Presentation.
+## Project
 
-## Team Members
+Our project is a desktop application concept that aims to bring the universe closer to the user.
+The app is designed to have both an educational and entertaining purpose.
 
-- Simone
-- Tommaso
-- Andrea
-- Giuseppe
-- Sergio
+The idea is to create a platform where users can explore the universe, learn about celestial bodies, and perform data analysis on them.
 
-## Subprojects
+We believe that the amount of data available is the main problem for a non expertise user to approach exoplanets and stars.
+Our app will provide a user-friendly interface, with strong focus on visualization, thus reducing the effort required to retrive and understand the data.
 
-- GUI
-    - Pannelli
-    - Orbitali 3D
-- Data Fecthing
-    - API
-- Musica
-    - Gestione musicale
+### Explore our galaxy
 
-1. API
-2. Pannelli (ricerca per campi)
-3. Musica
-4. Orbitali 3D
+We hope you will enjoy our app and have a wonderful exploration of the Earth's neighborhoods out there!
 
-## Past winners
+Giovio Team,
 
-- [$quality_over_quantity (7 slides)](https://docs.google.com/presentation/d/1DcM-HVUq7XsZ-Ejda_SjUdD0voUCBgtK/edit?usp=sharing&amp;amp;ouid=105576493316166878081&amp;amp;rtpof=true&amp;amp;sd=true)
-- [Oogway comics (7 slides)](https://drive.google.com/file/d/1v3oLPc5kVwft02WbxVRiMwsnDL-rQJFX/view?usp=sharing)
-- [Arcobaleno (30-second video)](https://drive.google.com/file/d/1ES-9aTX5GxjqIkOSWi4jLa-_Jmy1mFDo/view?usp=drive_link)
-- [Astrogenesis (30-second video)](https://www.youtube.com/watch?v=0aHwR1XT8ds)
-- [Greetings from Earth!! (30-second video)](https://www.youtube.com/watch?v=O0IxhKn1Uiw)
-- [LunarTech Ensemble (30-second video)](https://youtu.be/J3z1jt0I5_A)
-- [Spacebee (30-second video)](https://youtu.be/vygmcA93Rnk)
-- [Space Quest Maidens - Donzelas da Missão Espacial (30-second video)](https://youtu.be/kilAk3jkiSA)
-- [Storm Prophet (30-second video)](https://youtu.be/NXp3sfRW8tk)
-- [Team Voyagers (30-second video)](https://youtu.be/mtHMyOQ0vzA)
+Tommaso, Andrea, Giuseppe & Sergio
