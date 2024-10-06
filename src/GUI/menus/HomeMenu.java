@@ -13,7 +13,11 @@ import utils.Interfaces;
 public class HomeMenu extends MenuLayout implements Interfaces.UIPanel {
 
     public static String ID = "Home";
+
+    @SuppressWarnings("unused")
     private GUI gui;
+    
+    @SuppressWarnings("unused")
     private MainModel mainModel;
 
     private JLabel labelTitle = new JLabel("Exosky!");
@@ -38,6 +42,8 @@ public class HomeMenu extends MenuLayout implements Interfaces.UIPanel {
 
         addComponent(labelTitle);
         addComponent(labelCaption);
+
+        gui.appTheme.registerPanel(subPanel);
 
         addActionEvent();
 

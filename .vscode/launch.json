@@ -6,9 +6,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "HomeMenu",
+            "name": "ExplorerDisplay",
             "request": "launch",
-            "mainClass": "GUI.menus.HomeMenu",
+            "mainClass": "GUI.explorer.ExplorerDisplay",
             "projectName": "NASA Space Apps Challenge_55d2adc6"
         },
         {

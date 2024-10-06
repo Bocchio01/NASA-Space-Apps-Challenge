@@ -1,27 +1,24 @@
 package models;
 
 import models.data.DataHandler;
-import models.data.DataStorage;
-import models.logic.ExampleLogic;
+import models.file.FileHandler;
+import models.logic.LogicExoplanet;
 
-/**
- * The MainModel class represents the core model of the application.
- * It encapsulates various components for handling files, data storage, and logic operations.
- */
 public class MainModel {
     
-
-    public DataStorage dataStorage;
+    public FileHandler file;
     public DataHandler data;
 
-    public ExampleLogic exampleLogic;
+    public LogicExoplanet logicExoplanet;
 
 
     public MainModel() {
 
+        file = new FileHandler();
+
         data = new DataHandler();
 
-        exampleLogic = new ExampleLogic(data);
+        logicExoplanet = new LogicExoplanet(data);
 
     }
 }

@@ -11,7 +11,11 @@ import utils.Interfaces;
 public class ExplorerMenu extends MenuLayout implements Interfaces.UIPanel {
 
     public static String ID = "Explorer";
+
+    @SuppressWarnings("unused")
     private GUI gui;
+
+    @SuppressWarnings("unused")
     private MainModel mainModel;
 
     public ExplorerMenu(MainModel mainModel) {
@@ -26,6 +30,8 @@ public class ExplorerMenu extends MenuLayout implements Interfaces.UIPanel {
         this.gui = gui;
 
         addComponent(new Widget.LogoLabel());
+
+        gui.appTheme.registerPanel(subPanel);
 
         addActionEvent();
 

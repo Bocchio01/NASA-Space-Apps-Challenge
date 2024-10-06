@@ -32,6 +32,19 @@ public class Constants {
             }
         }
 
+        public static final class Files {
+            public static final String EXOPLANETS = getPath("Exoplanets.csv");
+            public static final String STARS = getPath("Stars.csv");
+            public static final String CONSTELLATIONS = getPath("Constellations.csv");
+
+            private Files() {
+            }
+
+            private static String getPath(String fileName) {
+                return String.join(SEPARATOR, new String[] { "src", "resources", fileName });
+            }
+        }
+
         private Path() {
         }
     }

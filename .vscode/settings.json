@@ -3,8 +3,12 @@
         ".",
         "src"
     ],
-    "java.project.referencedLibraries": [
-        "lib/adql1.5.jar"
-    ],
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.project.referencedLibraries": [],
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-17",
+            "path": "C:\\Program Files\\Java\\jdk-17",
+        }
+    ]
 }

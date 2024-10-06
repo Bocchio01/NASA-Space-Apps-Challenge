@@ -1,5 +1,3 @@
-package prototypes;
-
 import javax.swing.JFrame;
 
 public class mainStarField {

@@ -2,11 +2,11 @@ package models.logic;
 
 import models.data.DataHandler;
 
-public class ExampleLogic {
+public class LogicExoplanet {
 
     private DataHandler dataHandler;
 
-    public ExampleLogic(DataHandler dataHandler) {
+    public LogicExoplanet(DataHandler dataHandler) {
         this.dataHandler = dataHandler;
     }
 

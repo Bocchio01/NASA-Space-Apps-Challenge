@@ -9,13 +9,18 @@ import javax.swing.*;
 import GUI.GUI;
 import GUI.Widget;
 import models.MainModel;
-import models.record.Star;
+import models.record.ExoplanetRecord;
+import models.record.StarRecord;
 import utils.Interfaces;
 
 public class ExplorerDisplay extends JPanel implements Interfaces.UIPanel {
 
-    public static String ID = "VisualPanel";
+    public static String ID = "ExplorerDisplay";
+
+    @SuppressWarnings("unused")
     private GUI gui;
+    
+    @SuppressWarnings("unused")
     private MainModel mainModel;
 
     private Widget.StarField starField;
@@ -23,13 +28,16 @@ public class ExplorerDisplay extends JPanel implements Interfaces.UIPanel {
     public ExplorerDisplay(MainModel mainModel) {
         this.mainModel = mainModel;
 
+        ExoplanetRecord exoplanet = mainModel.data.getExoplanetBy(2);
+        System.out.println("Esopianeta: " + exoplanet);
+
         this.setBackground(Color.BLACK);
 
 
         this.starField = new Widget.StarField(List.of(
-                new Star(100, 150, 1, 3),
-                new Star(200, 100, 5, 2),
-                new Star(300, 200, 10, 5)));
+                new StarRecord(100, 150, 1, 3),
+                new StarRecord(200, 100, 5, 2),
+                new StarRecord(300, 200, 10, 5)));
     }
 
     private void addActionEvent() {
