@@ -1,14 +1,11 @@
 package GUI.layouts;
 
-import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import utils.Constants.GUI;
 
 public class MenuLayout extends JPanel {
 
@@ -41,14 +38,16 @@ public class MenuLayout extends JPanel {
 
         add(subPanel, mainPanelConstrains);
 
-        subPanel.setPreferredSize(new Dimension(250, 500));
+        // subPanel.setPreferredSize(new Dimension(250, 500));
+
         JScrollPane scrollFrame = new JScrollPane(subPanel);
-        subPanel.setAutoscrolls(false);
-        scrollFrame.setPreferredSize(new Dimension( 300, 300));
-        add(scrollFrame);
+        scrollFrame.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        scrollFrame.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+        add(scrollFrame, mainPanelConstrains);
     }
 
-    public void addComponent(JLabel component) {
+    public void addComponent(Component component) {
         subPanel.add(component, subPanelConstrains);
     }
 

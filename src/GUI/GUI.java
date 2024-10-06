@@ -6,7 +6,7 @@ import java.util.Map;
 
 import javax.swing.JPanel;
 
-import GUI.explorer.Graphics;
+import GUI.explorer.GraphicsExplorer;
 import GUI.mainElements.MainFrame;
 import GUI.mainElements.MenuBar;
 import GUI.menus.ExplorerMenu;
@@ -26,7 +26,7 @@ public class GUI {
     public GUI(MainModel mainModel) {
 
         mainFrame.setJMenuBar(new MenuBar(this));
-        mainFrame.setExplorerDisplay(new Graphics(mainModel).createPanel(this));
+        mainFrame.setExplorerDisplay(new GraphicsExplorer(mainModel).createPanel(this));
 
         homeMenu = new HomeMenu(mainModel);
         explorerMenu = new ExplorerMenu(mainModel);

@@ -2,8 +2,6 @@ package GUI.explorer;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,69 +9,75 @@ import javax.swing.*;
 
 import GUI.GUI;
 import GUI.Widget;
+import models.CurrentCelestialObject;
+import models.CurrentCelestialObject.CurrentCelestialObjectChangeListener;
 import models.MainModel;
 import models.record.ExoplanetRecord;
 import models.record.StarRecord;
-import models.record.CelestialObjectRecord;
 import utils.Interfaces;
 
-public class GraphicsExplorer extends JPanel implements Interfaces.UIPanel {
+public class GraphicsExplorer extends JPanel implements Interfaces.UIPanel, CurrentCelestialObjectChangeListener {
 
     public static String ID = "GraphicsExplorer";
 
     @SuppressWarnings("unused")
     private GUI gui;
-    
+
     @SuppressWarnings("unused")
     private MainModel mainModel;
 
-    private Widget.StarField starField;
-    private Graphics graphics = new Graphics() {
-        @Override
-        public void paintComponent(Graphics g) {
-            super.paintComponent(g);
-        }
-    };
+    private Widget.StarField starField = new Widget.StarField(new ArrayList<>());
 
     public GraphicsExplorer(MainModel mainModel) {
         this.mainModel = mainModel;
 
+        CurrentCelestialObject celestialObject = CurrentCelestialObject.getInstance();
+        celestialObject.addCurrentUserChangeListener(this);
+
         setBackground(Color.BLACK);
+    }
 
-        List<ExoplanetRecord> exoplanets = new ArrayList<>();
-        for (int i = 1; i < 500; i++) {
-            exoplanets.add(mainModel.data.getExoplanetBy(i));
-        }
+    private void addActionEvent() {
+    }
 
-        Dimension dim = getSize();
+    private void paintNewCelestialObject() {
+        List<ExoplanetRecord> exoplanets = mainModel.data.getDataStorage().getExoplanets();
 
-        List<CelestialObjectRecord> stars = new ArrayList<>();
+        List<StarRecord> stars = new ArrayList<>();
         for (ExoplanetRecord exoplanet : exoplanets) {
-            stars.add(new CelestialObjectRecord(
-                    3,
-                    exoplanet.ra(),
-                    exoplanet.dec(),
-                    exoplanet.mag_v(),
-                    1.0));
+            stars.add(new StarRecord(
+                    (int) (exoplanet.ra() * 1200 / 360.0),
+                    (int) (exoplanet.dec() * 500 / 90.0 + 500 / 2),
+                    5.0,
+                    1));
 
         }
 
         this.starField = new Widget.StarField(stars);
     }
 
-    private void addActionEvent() {
-    }
+    @Override
+    public void onCelestialObjectChange()
+    {
+        paintNewCelestialObject();
+        
+        removeAll();
+        add(starField, BorderLayout.CENTER);
+        
+        
+        revalidate();
+        repaint();
 
-    public void drawPoint(Graphics g, int x, int y, int size) {
-        g.fillOval(x, y, size, size);
+
     }
 
     @Override
     public GraphicsExplorer createPanel(GUI gui) {
         this.gui = gui;
 
-        this.setLayout(new BorderLayout());
-        this.add(starField, BorderLayout.CENTER);
+        setLayout(new BorderLayout());
+        add(starField, BorderLayout.CENTER);
+
         gui.appTheme.registerPanel(this);
 
         addActionEvent();
