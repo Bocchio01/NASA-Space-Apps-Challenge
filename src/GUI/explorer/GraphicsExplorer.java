@@ -3,6 +3,7 @@ package GUI.explorer;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,22 +14,31 @@ import GUI.Widget;
 import models.MainModel;
 import models.record.ExoplanetRecord;
 import models.record.StarRecord;
+import models.record.CelestialObjectRecord;
 import utils.Interfaces;
 
-public class ExplorerDisplay extends JPanel implements Interfaces.UIPanel {
+public class GraphicsExplorer extends JPanel implements Interfaces.UIPanel {
 
-    public static String ID = "ExplorerDisplay";
+    public static String ID = "GraphicsExplorer";
 
+    @SuppressWarnings("unused")
     private GUI gui;
+    
+    @SuppressWarnings("unused")
     private MainModel mainModel;
 
     private Widget.StarField starField;
+    private Graphics graphics = new Graphics() {
+        @Override
+        public void paintComponent(Graphics g) {
+            super.paintComponent(g);
+        }
+    };
 
-    public ExplorerDisplay(MainModel mainModel) {
+    public GraphicsExplorer(MainModel mainModel) {
         this.mainModel = mainModel;
 
         setBackground(Color.BLACK);
-        setPreferredSize(new Dimension(800, 600));
 
         List<ExoplanetRecord> exoplanets = new ArrayList<>();
         for (int i = 1; i < 500; i++) {
@@ -37,14 +47,15 @@ public class ExplorerDisplay extends JPanel implements Interfaces.UIPanel {
 
         Dimension dim = getSize();
 
-        List<StarRecord> stars = new ArrayList<>();
+        List<CelestialObjectRecord> stars = new ArrayList<>();
         for (ExoplanetRecord exoplanet : exoplanets) {
-            stars.add(new StarRecord(
-               (int) (exoplanet.ra() / 360 * 600),
-               (int) (exoplanet.dec() / 90 * 500 / 2 + 500 / 2),
-                10,
-                5));
-            
+            stars.add(new CelestialObjectRecord(
+                    3,
+                    exoplanet.ra(),
+                    exoplanet.dec(),
+                    exoplanet.mag_v(),
+                    1.0));
+
         }
 
         this.starField = new Widget.StarField(stars);
@@ -53,8 +64,12 @@ public class ExplorerDisplay extends JPanel implements Interfaces.UIPanel {
     private void addActionEvent() {
     }
 
+    public void drawPoint(Graphics g, int x, int y, int size) {
+        g.fillOval(x, y, size, size);
+    }
+
     @Override
-    public ExplorerDisplay createPanel(GUI gui) {
+    public GraphicsExplorer createPanel(GUI gui) {
         this.gui = gui;
 
         this.setLayout(new BorderLayout());
@@ -79,7 +94,7 @@ public class ExplorerDisplay extends JPanel implements Interfaces.UIPanel {
         SwingUtilities.invokeLater(() -> {
             MainModel mainModel = new MainModel();
             GUI gui = new GUI(mainModel);
-            ExplorerDisplay home = new ExplorerDisplay(mainModel);
+            GraphicsExplorer home = new GraphicsExplorer(mainModel);
 
             gui.addMenuPanel(home.createPanel(gui));
             home.onOpen(args);

@@ -3,7 +3,11 @@
         ".",
         "src"
     ],
-    "java.project.referencedLibraries": [],
+    "java.project.referencedLibraries": [
+        "lib/Java3D 1.5.2/j3dcore.jar",
+        "lib/Java3D 1.5.2/j3dutils.jar",
+        "lib/Java3D 1.5.2/vecmath.jar"
+    ],
     "java.configuration.updateBuildConfiguration": "interactive",
     "java.configuration.runtimes": [
         {
