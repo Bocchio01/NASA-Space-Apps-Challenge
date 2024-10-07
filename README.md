@@ -2,7 +2,11 @@
 
 "NASA Space Apps Challenge" 2024, submitted by the "Giovio Team"
 
-![Team logo](src/assets/logo.png)
+<div align="center">
+<img src="src/assets/logo.png" alt="App's logo" width="50%"/>
+<br>
+<figcaption>App's logo</figcaption>
+</div>
 
 ## Project
 
